@@ -1,24 +1,25 @@
 #this class will be responsible for calling the scraper and printing the top 10 list
 
+require './lib/amazon_top_games'
+
 class AmazonTopGames::ConsoleTopTwentyList
-	attr_accessor :site
-	def initialize(site)
-		@console_name = site.name
-		@site = site
-		@list = []
+	attr_accessor :site, :list
+	def initialize(console)
+		@console = console
+		@list = [] #has many list items
 	end
 
 
 	def print_list
-		puts "#{@console_name}'s top 10 selling items: "
+		puts "#{@console.name}'s top 10 selling items: "
 		#should call get_items and iterate over them with index printing out the name and price
 	end
 
 
 	def get_items
 
-		#@items should be an array of List Objects with a name, price, and link href. 10 items max
-		@list_items = AmazonTopGames::Scraper.new.main_site(site.url)
+		#@items should be an array of List Objects with a name, price, and link href. 20 items
+		AmazonTopGames::Scraper.main_site(self)
 	end
 
 end
