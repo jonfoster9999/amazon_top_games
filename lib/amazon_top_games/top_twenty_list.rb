@@ -1,6 +1,6 @@
 #this class will be responsible for calling the scraper and printing the top 10 list
 
-class AmazonTopGames::MakeList
+class AmazonTopGames::TopTwentyList
 	attr_accessor :site
 	def initialize(site)
 		@site = site
