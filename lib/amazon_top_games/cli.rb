@@ -29,13 +29,13 @@ class AmazonTopGames::CLI
 		catch :exit do
 			case input
 			when "1"
-				AmazonTopGames::TopTwentyList.new(AmazonTopGames::Site.new("Playstation", "playstation_url")).print_site
+				AmazonTopGames::ConsoleTopTwentyList.new(AmazonTopGames::Site.new("Playstation", "playstation_url")).print_list
 			when "2"
-				AmazonTopGames::TopTwentyList.new(AmazonTopGames::Site.new("Xbox", "xbox_url")).print_site
+				AmazonTopGames::ConsoleTopTwentyList.new(AmazonTopGames::Site.new("Xbox", "xbox_url")).print_list
 			when "3"
-				AmazonTopGames::TopTwentyList.new(AmazonTopGames::Site.new("Wii", "wii_url")).print_site
+				AmazonTopGames::ConsoleTopTwentyList.new(AmazonTopGames::Site.new("Wii", "wii_url")).print_list
 			when "4" 
-				AmazonTopGame::TopTwentyList.new(AmazonTopGames::Site.new("Nintendo DS", "nindendo_DS_url")).print_site
+				AmazonTopGame::ConsoleTopTwentyList.new(AmazonTopGames::Site.new("Nintendo DS", "nindendo_DS_url")).print_list
 			when "exit"
 				throw :exit
 			else

@@ -1,15 +1,16 @@
 #this class will be responsible for calling the scraper and printing the top 10 list
 
-class AmazonTopGames::TopTwentyList
+class AmazonTopGames::ConsoleTopTwentyList
 	attr_accessor :site
 	def initialize(site)
+		@console_name = site.name
 		@site = site
 		@list = []
 	end
 
 
-	def print_site
-		puts "#{@site.name}'s top 10 selling items: "
+	def print_list
+		puts "#{@console_name}'s top 10 selling items: "
 		#should call get_items and iterate over them with index printing out the name and price
 	end
 
