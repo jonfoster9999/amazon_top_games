@@ -3,7 +3,7 @@
 require './lib/amazon_top_games'
 
 class AmazonTopGames::ConsoleTopTwentyList
-	attr_accessor :site, :list
+	attr_accessor :list, :console
 	def initialize(console)
 		@console = console
 		@list = [] #has many list items
@@ -11,7 +11,11 @@ class AmazonTopGames::ConsoleTopTwentyList
 
 
 	def print_list
+		get_items
 		puts "#{@console.name}'s top 10 selling items: "
+		@list.each_with_index do |list_item, index|
+			puts "#{index + 1}. #{list_item.name} - #{list_item.price.green}"
+		end
 		#should call get_items and iterate over them with index printing out the name and price
 	end
 
