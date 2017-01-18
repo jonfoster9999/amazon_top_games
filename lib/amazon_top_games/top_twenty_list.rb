@@ -4,6 +4,7 @@ class AmazonTopGames::TopTwentyList
 	attr_accessor :site
 	def initialize(site)
 		@site = site
+		@list = []
 	end
 
 
@@ -16,7 +17,7 @@ class AmazonTopGames::TopTwentyList
 	def get_items
 
 		#@items should be an array of List Objects with a name, price, and link href. 10 items max
-		@items = AmazonTopGames::Scraper.new.main_site(site.url)
+		@list_items = AmazonTopGames::Scraper.new.main_site(site.url)
 	end
 
 end
