@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "amazon_top_games"
+
+AmazonTopGames::CLI.new.run

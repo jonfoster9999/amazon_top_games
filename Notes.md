@@ -1,0 +1,1 @@
+when I re-open, check out make_list.rb.   Work on the commented out sections
