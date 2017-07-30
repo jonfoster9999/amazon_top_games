@@ -9,4 +9,6 @@ require "amazon_top_games/top_twenty_list_item"
 require "amazon_top_games/scraper"
 require "nokogiri"
 require "pry"
+require "mechanize"
+require "socket"
 
