@@ -5,10 +5,10 @@ class AmazonTopGames::Scraper
 
 	def self.main_site(top_twenty_list)
 		url = top_twenty_list.console.url
-		doc = Nokogiri::HTML(open("https://www.amazon.com/Best-Sellers-Video-Games-PlayStation-Consoles-Accessories/zgbs/videogames/6427814011/ref=zg_bs_nav_vg_1_vg/156-9684545-1840139"))
+		doc = Nokogiri::HTML(open(url))
 		items = doc.css("div.zg_itemImmersion")
 		items.each do |item|
-			name = item.css("a").text.split(" -")[0].split(".")[0]
+			name = item.css("a").text.split(" -")[0].split(".")[0].gsub("\n", "").split("  ")[0]
 			price = item.css("strong").text
 			if !price.include?("$")
 				price = "Visit Amazon for price"
@@ -20,7 +20,37 @@ class AmazonTopGames::Scraper
 		end
 	end
 
+	def self.product_page(top_twenty_list_item)
+		url = top_twenty_list_item.url
+		doc = Nokogiri::HTML(open(url))
+		binding.pry
+
+	end
+
 
 end
+
+
+###NEW EGG SCRAPER########
+
+
+#MAIN PAGE
+#BRAND:
+##item.css('.item-brand img').attr("title").text
+#Title: 
+# item.css('.item-title').text.strip
+
+
+#PRODUCT PAGE
+#####PRICE:
+#doc.css('div meta').first["content"]
+###Title:
+## doc.css('h1 span').text.strip.split(" - ")[0]
+
+
+
+
+
+
 
 
