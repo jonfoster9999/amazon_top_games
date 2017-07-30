@@ -14,9 +14,6 @@ Pick a console:
 Choose a number or type "exit" to exit:
 
 
-
-
-
 Playstation 4's Twenty Top Selling Items:
 
 1. $20 Playstation Store Gift Card - $19.99
