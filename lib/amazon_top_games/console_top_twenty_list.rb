@@ -12,7 +12,7 @@ class AmazonTopGames::ConsoleTopTwentyList
 
 	def print_list
 		get_items
-		puts "#{@console.name}'s top 10 selling items: "
+		puts "#{@console.name}'s top 20 selling items: "
 		@list.each_with_index do |list_item, index|
 			puts "#{index + 1}. #{list_item.name} - #{list_item.price.green}"
 		end
